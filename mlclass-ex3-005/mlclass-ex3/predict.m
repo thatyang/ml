@@ -23,9 +23,14 @@ X = [ones(m, 1) X];
 %       can use max(A, [], 2) to obtain the max for each row.
 %
 
+% temp = sigmoid(X*Theta1');
+% temp = [ones(m, 1) temp]; 
+% [b, final] = max(sigmoid(Theta2*temp'));
+
+
 temp = sigmoid(X*Theta1');
 temp = [ones(m, 1) temp]; 
-[b, final] = max(sigmoid(Theta2*temp'));
+[b, final] = max(Theta2*temp');
 
 p = final;
 
